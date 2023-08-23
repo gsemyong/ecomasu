@@ -54,7 +54,6 @@ const Features = () => {
             {features.map((feature) => (
               <MagicCard
                 key={feature.name}
-                borderWidth={3}
                 spotlightColor="hsla(47.9,95.8%,53.1%,0.1)"
                 size={800}
                 className="relative flex w-full max-w-lg cursor-pointer items-start gap-6 overflow-hidden py-6 pl-6 pr-8 shadow-2xl"
