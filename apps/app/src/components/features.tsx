@@ -50,13 +50,13 @@ const Features = () => {
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-          <MagicContainer className="grid max-w-xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-2 lg:gap-10">
+          <MagicContainer className="grid grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-2 lg:gap-10">
             {features.map((feature) => (
               <MagicCard
                 key={feature.name}
                 spotlightColor="hsla(47.9,95.8%,53.1%,0.1)"
                 size={800}
-                className="relative flex w-full max-w-lg cursor-pointer items-start gap-6 overflow-hidden py-6 pl-6 pr-8 shadow-2xl"
+                className="relative flex w-full cursor-pointer items-start gap-6 overflow-hidden py-6 pl-6 pr-8 shadow-2xl"
               >
                 <div className="z-10 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-primary text-base font-semibold leading-7">
                   <feature.icon
