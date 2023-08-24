@@ -1,5 +1,6 @@
 import { type AppType } from "next/app";
 import { api } from "@/utils/api";
+import { Toaster } from "@/components/ui/toaster";
 import "@/styles/globals.css";
 
 import { Space_Grotesk } from "next/font/google";
@@ -16,6 +17,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         }
       `}</style>
       <Component {...pageProps} />
+      <Toaster />
     </>
   );
 };

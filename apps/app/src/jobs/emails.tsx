@@ -2,17 +2,17 @@ import { eventTrigger } from "@trigger.dev/sdk";
 import { trigger } from "@/trigger";
 import { z } from "zod";
 import { resend } from "@/resend";
+import { NewsletterSubscribeEmail } from "~/emails/newsletter-subscribe";
 
 trigger.defineJob({
-  id: "send-resend-email",
-  name: "Send Resend Email",
+  id: "send-newsletter-subscribe-email",
+  name: "Send newsletter subscribe email",
   version: "0.1.0",
   trigger: eventTrigger({
-    name: "send.email",
+    name: "send.email.newsletter.subscribe",
     schema: z.object({
       to: z.union([z.string(), z.array(z.string())]),
       subject: z.string(),
-      text: z.string(),
     }),
   }),
   integrations: {
@@ -22,8 +22,8 @@ trigger.defineJob({
     await io.resend.sendEmail("send-email", {
       to: payload.to,
       subject: payload.subject,
-      text: payload.text,
-      from: "Acme <onboarding@resend.dev>",
+      react: <NewsletterSubscribeEmail />,
+      from: "Ecomasu <onboarding@resend.dev>",
     });
   },
 });
