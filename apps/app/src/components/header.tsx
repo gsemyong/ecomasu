@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div className="sticky top-0 z-20 flex w-full items-center gap-4 border-b bg-background/80 px-6 py-4 backdrop-blur-md">
       <div className="flex items-center justify-center gap-2">
-        <ShadowIcon className="inline h-6 w-6" />
+        <ShadowIcon className="inline h-6 w-6 text-primary" />
         <H3>
           e<span className="hidden sm:inline">coma</span>
           <span className="text-primary">
