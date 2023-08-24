@@ -11,9 +11,8 @@ export const env = createEnv({
     TRIGGER_API_KEY: z.string().min(1),
     TRIGGER_API_URL: z.string().url(),
     RESEND_API_KEY: z.string().min(1),
-    DATABASE_HOST: z.string().min(1),
-    DATABASE_USERNAME: z.string().min(1),
-    DATABASE_PASSWORD: z.string().min(1),
+    UPSTASH_REDIS_REST_TOKEN: z.string().min(1),
+    UPSTASH_REDIS_REST_URL: z.string().url(),
   },
 
   /**
@@ -34,9 +33,8 @@ export const env = createEnv({
     TRIGGER_API_KEY: process.env.TRIGGER_API_KEY,
     TRIGGER_API_URL: process.env.TRIGGER_API_URL,
     RESEND_API_KEY: process.env.RESEND_API_KEY,
-    DATABASE_HOST: process.env.DATABASE_HOST,
-    DATABASE_USERNAME: process.env.DATABASE_USERNAME,
-    DATABASE_PASSWORD: process.env.DATABASE_PASSWORD,
+    UPSTASH_REDIS_REST_TOKEN: process.env.UPSTASH_REDIS_REST_TOKEN,
+    UPSTASH_REDIS_REST_URL: process.env.UPSTASH_REDIS_REST_URL,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   /**
