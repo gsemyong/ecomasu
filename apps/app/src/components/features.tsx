@@ -1,11 +1,10 @@
 import { MagicCard, MagicContainer } from "./magicui/magic-card";
 import { SiTypescript } from "@icons-pack/react-simple-icons";
-
 import {
-  BoltIcon,
+  LightningBoltIcon,
   MagnifyingGlassIcon,
-  CodeBracketIcon,
-} from "@heroicons/react/24/outline";
+  CodeIcon,
+} from "@radix-ui/react-icons";
 
 const features = [
   {
@@ -18,7 +17,7 @@ const features = [
     name: "Extremely fast",
     description:
       "All of the data is coming from in-memory stores and is agressively cached for maximum performance.",
-    icon: BoltIcon,
+    icon: LightningBoltIcon,
   },
   {
     name: "Search is the key",
@@ -29,7 +28,7 @@ const features = [
   {
     name: "Fully open source",
     description: "All of our code is open source and available on GitHub.",
-    icon: CodeBracketIcon,
+    icon: CodeIcon,
   },
 ];
 
