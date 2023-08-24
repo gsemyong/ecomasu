@@ -1,11 +1,10 @@
 import { DocsThemeConfig } from "nextra-theme-docs";
-import { ShadowIcon } from "@radix-ui/react-icons";
+import { DiscordLogoIcon, ShadowIcon } from "@radix-ui/react-icons";
 
 export default {
   logo: (
     <ShadowIcon
       style={{
-        color: "hsl(47.9,95.8%,53.1%)",
         width: "2rem",
         height: "2rem",
       }}
@@ -18,8 +17,12 @@ export default {
   project: {
     link: "https://github.com/shuding/nextra",
   },
+  chat: {
+    icon: <DiscordLogoIcon width={"24px"} height={"24px"} />,
+    link: "https://discord.gg/2UQRJWJ",
+  },
   footer: {
-    component: null,
+    text: "MIT License",
   },
   // ... other theme options
 } satisfies DocsThemeConfig;

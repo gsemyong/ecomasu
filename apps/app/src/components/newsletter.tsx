@@ -15,10 +15,11 @@ export default function Newsletter() {
         description: "You will be notified when we launch.",
       });
     },
-    onError: (error) => {
+    onError: () => {
+      setEmail("");
       toast({
-        title: "Error!",
-        description: error.message,
+        title: "You are already subscribed!",
+        description: "You will be notified when we launch.",
       });
     },
   });
@@ -39,7 +40,7 @@ export default function Newsletter() {
               e.preventDefault();
               subscribeMutation.mutate({ email });
             }}
-            className="mx-auto mt-10 flex max-w-md gap-x-2"
+            className="mx-auto mt-10 flex max-w-md gap-x-4"
           >
             <label htmlFor="email-address" className="sr-only">
               Email address
@@ -48,7 +49,7 @@ export default function Newsletter() {
               id="email-address"
               name="email"
               type="email"
-              autoComplete="email"
+              autoComplete="off"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
