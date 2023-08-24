@@ -1,8 +1,8 @@
-import Faq from "@/components/faq";
 import Features from "@/components/features";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
+import Newsletter from "@/components/newsletter";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
         <Header />
         <Hero />
         <Features />
-        <Faq />
+        <Newsletter />
         <Footer />
       </main>
     </>
