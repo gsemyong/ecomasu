@@ -1,7 +1,5 @@
 import { eventTrigger } from "@trigger.dev/sdk";
 import { trigger } from "@/trigger";
-import { z } from "zod";
-import { resend } from "@/resend";
 
 // Your first job
 // This Job will be triggered by an event, log a joke to the console, and then wait 5 seconds before logging the punchline
@@ -25,30 +23,5 @@ trigger.defineJob({
       "✨ Congratulations, You just ran your first successful Trigger.dev Job! ✨"
     );
     // To learn how to write much more complex (and probably funnier) Jobs, check out our docs: https://trigger.dev/docs/documentation/guides/create-a-job
-  },
-});
-
-trigger.defineJob({
-  id: "send-resend-email",
-  name: "Send Resend Email",
-  version: "0.1.0",
-  trigger: eventTrigger({
-    name: "send.email",
-    schema: z.object({
-      to: z.union([z.string(), z.array(z.string())]),
-      subject: z.string(),
-      text: z.string(),
-    }),
-  }),
-  integrations: {
-    resend,
-  },
-  run: async (payload, io, ctx) => {
-    await io.resend.sendEmail("send-email", {
-      to: payload.to,
-      subject: payload.subject,
-      text: payload.text,
-      from: "Acme <onboarding@resend.dev>",
-    });
   },
 });
