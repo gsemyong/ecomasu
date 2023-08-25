@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { api } from "@/utils/api";
 import { useToast } from "./ui/use-toast";
+import { ReloadIcon } from "@radix-ui/react-icons";
 
 export default function Newsletter() {
   const [email, setEmail] = useState("");
@@ -40,7 +41,7 @@ export default function Newsletter() {
               e.preventDefault();
               subscribeMutation.mutate({ email });
             }}
-            className="mx-auto mt-10 flex max-w-md gap-x-4"
+            className="mx-auto mt-10 flex max-w-xl flex-col gap-4 sm:flex-row"
           >
             <label htmlFor="email-address" className="sr-only">
               Email address
@@ -56,7 +57,14 @@ export default function Newsletter() {
               className="h-12 min-w-0 px-4"
               placeholder="Enter your email"
             />
-            <Button className="h-12 w-32" type="submit">
+
+            <Button
+              disabled={subscribeMutation.isLoading}
+              className="text-md h-12 shrink-0"
+            >
+              {subscribeMutation.isLoading && (
+                <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
+              )}
               Notify me
             </Button>
           </form>

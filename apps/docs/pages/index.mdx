@@ -1,3 +1,81 @@
-# Welcome to Nextra
+# Quickstart
 
-Hello, world!
+This guide will provide you with the basic steps to get started.
+
+## Prerequisites
+
+{/* TODO: add instructions for connecting Shopify store to ecomasu */}
+
+## Installation
+
+```bash copy
+npm install ecomasu
+```
+
+## Usage
+
+Initialize Ecomasu with your store's public API key.
+
+```js copy filename="ecomasu.ts"
+import { Ecomasu } from "ecomasu";
+
+const ecomasu = new Ecomasu({
+  key: "YOUR_PUBLIC_API_KEY",
+});
+
+export const { useAutocomplete, useSearchResults } = ecomasu;
+```
+
+Use `useAutocomplete` hook to implement autocomplete UI.
+
+```js copy filename="App.tsx"
+import { ecomasu } from "./ecomasu";
+
+const App = () => {
+  const { products, collections, query, setQuery } = useAutocomplete();
+
+  return (
+    <>
+      <input onChange={(e) => setQuery(e.target.value)} />
+      <div>
+        {products.map((product) => (
+          <div key={product.id}>{product.title}</div>
+        ))}
+      </div>
+      <div>
+        {collections.map((collection) => (
+          <div key={collection.id}>{collection.title}</div>
+        ))}
+      </div>
+    </>
+  );
+};
+```
+
+Use `useSearchResults` hook to implement search results UI.
+
+```js copy filename="App.tsx"
+import { ecomasu } from "./ecomasu";
+
+const App = () => {
+  const { products, query, setQuery, page, setPage, numPages } =
+    useSearchResults();
+
+  return (
+    <>
+      <input onChange={(e) => setQuery(e.target.value)} />
+      <div>
+        {products.map((product) => (
+          <div key={product.id}>{product.title}</div>
+        ))}
+        <input
+          type="number"
+          min={1}
+          max={numPages}
+          onChange={(e) => setPage(e.target.value)}
+        />
+      </div>
+    </>
+  );
+};
+```

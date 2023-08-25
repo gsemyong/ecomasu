@@ -1,44 +1,43 @@
 import {
-  Html,
+  Body,
+  Container,
   Head,
+  Heading,
+  Hr,
+  Html,
+  Link,
   Preview,
   Tailwind,
-  Link,
-  Container,
-  Section,
   Text,
-  Heading,
 } from "@react-email/components";
+import * as React from "react";
 
 export const NewsletterSubscribeEmail = () => {
   return (
     <Html>
       <Head />
-      <Preview>You have successfully subscribed to ecomasu updates</Preview>
+      <Preview>You&rsquo;ve subscribed to ecomasu updates</Preview>
       <Tailwind>
-        <Container className="bg-white px-6 pb-6 font-sans">
-          <Heading
-            as="h4"
-            className="scroll-m-20 text-xl font-semibold tracking-tight"
-          >
-            You have successfully subscribed to ecomasu updates
-          </Heading>
-          <Text className="leading-7 [&:not(:first-child)]:mt-6">
-            Much stuff is coming soon, stay tuned! For now go explore the
-            following links:
-          </Text>
-          <Section>
-            <Link className="mr-4" href="https://example.com">
-              Docs
-            </Link>
-            <Link className="mr-4" href="https://example.com">
-              Discord
-            </Link>
-            <Link className="mr-4" href="https://example.com">
-              Github
-            </Link>
-          </Section>
-        </Container>
+        <Body className="mx-auto my-auto bg-white font-sans">
+          <Container className="mx-auto my-[40px] w-[465px] rounded-xl bg-stone-900 p-[20px] text-white shadow-2xl">
+            <Heading className="m-0 tracking-tight">
+              ecoma
+              <span className="text-yellow-500">su</span>
+            </Heading>
+            <Text className="mt-[20px]">
+              You&rsquo;ve successfully subscribed to ecomasu updates. You will
+              receive an email when we launch.
+            </Text>
+            <Hr className="mt-[20px]" />
+            <Text className="mt-[20px]">
+              In the meantime, make sure to join our{" "}
+              <Link className="text-yellow-500" href="https://discord.com">
+                Discord
+              </Link>{" "}
+              to get help and discuss the project.
+            </Text>
+          </Container>
+        </Body>
       </Tailwind>
     </Html>
   );

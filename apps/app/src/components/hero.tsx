@@ -3,6 +3,7 @@ import { H1, Large, P } from "./typography";
 import LinearGradient from "./magicui/linear-gradient";
 import DotPattern from "./magicui/dot-pattern";
 import { Button } from "./ui/button";
+import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 
 const Hero = () => {
   return (
@@ -18,7 +19,8 @@ const Hero = () => {
             <Large>Get started</Large>
           </Button>
           <Button className="p-6" variant="outline">
-            <Large>Learn more</Large>
+            <Large>Read docs</Large>
+            <ArrowTopRightIcon className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </div>
