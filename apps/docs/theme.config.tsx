@@ -31,6 +31,9 @@ export default {
       </span>
     </>
   ),
+  nextThemes: {
+    defaultTheme: "dark",
+  },
   project: {
     link: "https://github.com/gsemyong/ecomasu",
   },
